@@ -1,0 +1,17 @@
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        """
+        [-1, -2, -3, 2, 2]
+        """
+        for i in range(len(nums)):
+            idx = abs(nums[i]) - 1
+            if nums[idx] < 0:
+                return idx + 1
+
+            nums[idx] *= -1
+
+        return -1
+
+            
+
+
